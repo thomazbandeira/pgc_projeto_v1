@@ -1,11 +1,10 @@
-﻿using Examples.Charge.Domain.Aggregates.PersonAggregate;
-using Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces.Repository;
+﻿using Examples.Charge.Domain.Aggregates.GenericAggregate.Interfaces;
+using Examples.Charge.Domain.Aggregates.PersonAggregate;
 using Examples.Charge.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Examples.Charge.Infra.Data.Repositories
@@ -46,6 +45,7 @@ namespace Examples.Charge.Infra.Data.Repositories
 
         public void SaveChanges() => _context.SaveChanges();
 
-        public async Task<IEnumerable<Person>> FindAllAsync() => (IEnumerable<Person>)await Task.Run(() => _context.Set<T>().ToListAsync());
+        
+        public async Task<IEnumerable<T>> FindAllAsync() => (IEnumerable<T>)await Task.Run(() => _context.Set<T>().ToListAsync());
     }
 }

@@ -1,8 +1,4 @@
-﻿using Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces.Repository;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Examples.Charge.Domain.Aggregates.GenericAggregate.Interfaces;
 
 namespace Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces
 {
