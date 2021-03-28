@@ -22,8 +22,6 @@ namespace Examples.Charge.Application.Facade
             _exampleService = exampleService;
             _mapper = mapper;
         }
-        //aaa
-
         public void Delete(ExampleRequest entity)
         {
             _exampleService.Delete(_mapper.Map<Example>(entity));
@@ -37,7 +35,6 @@ namespace Examples.Charge.Application.Facade
         {
             _exampleService.Update(_mapper.Map<Example>(entity));
         }
-
         public async Task<ExampleListResponse> FindAllAsync()
         {
             var result = await _exampleService.FindAllAsync();
