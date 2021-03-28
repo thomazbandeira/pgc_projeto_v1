@@ -9,32 +9,32 @@ namespace Examples.Charge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExampleController : BaseController
+    public class PersonPhoneController : BaseController
     {
-        private IExampleFacade _facade;
+        private IPersonPhoneFacade _facade;
 
-        public ExampleController(IExampleFacade facade, IMapper mapper)
+        public PersonPhoneController(IPersonPhoneFacade facade, IMapper mapper)
         {
             _facade = facade;
         }
 
         [HttpGet]
-        public async Task<ActionResult<ExampleListResponse>> Get() => Response(await _facade.FindAllAsync());
-
+        public async Task<ActionResult<PersonPhoneResponse>> Get() => Response(await _facade.FindAllAsync());
+       
         [HttpPost]
-        public IActionResult Update([FromBody] ExampleRequest request)
+        public IActionResult Update([FromBody] PersonPhoneRequest request)
         {
             _facade.Update(request);
             return Response(0, null);
         }
         [HttpPost]
-        public IActionResult Delete([FromBody] ExampleRequest request)
+        public IActionResult Delete([FromBody] PersonPhoneRequest request)
         {
             _facade.Delete(request);
             return Response(0, null);
         }
         [HttpPost]
-        public IActionResult Insert([FromBody] ExampleRequest request)
+        public IActionResult Insert([FromBody] PersonPhoneRequest request)
         {
             _facade.Insert(request);
             return Response(0, null);
