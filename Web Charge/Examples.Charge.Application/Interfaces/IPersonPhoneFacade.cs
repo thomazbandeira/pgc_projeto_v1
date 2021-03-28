@@ -2,7 +2,7 @@
 
 namespace Examples.Charge.Application.Interfaces
 {
-    public interface IPersonFacade : IGenericFacade<PersonResponse>
+    public interface IPersonPhoneFacade : IGenericFacade<PersonPhoneResponse>
     {
     }
 }

@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Examples.Charge.Application.Interfaces
 {
-    public interface IExampleFacade
+    public interface IExampleFacade:IGenericFacade<ExampleListResponse>
     {
-        Task<ExampleListResponse> FindAllAsync();
+
     }
 }
