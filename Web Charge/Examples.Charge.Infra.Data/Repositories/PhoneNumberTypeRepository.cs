@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace Examples.Charge.Infra.Data.Repositories
 {
-    public class PhoneNumberTypeRepository : IPhoneNumberTypeRepository
+    public class PhoneNumberTypeRepository : GenericRepository<PhoneNumberType>, IPhoneNumberTypeRepository
     {
         private readonly ExampleContext _context;
 
-        public PhoneNumberTypeRepository(ExampleContext context)
+        public PhoneNumberTypeRepository(ExampleContext context):base(context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
-        public async Task<IEnumerable<PhoneNumberType>> FindAllAsync() => await Task.Run(() => _context.PhoneNumberType);
     }
 }

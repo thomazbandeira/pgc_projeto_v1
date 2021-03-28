@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace Examples.Charge.Infra.Data.Repositories
 {
-    public class PersonRepository : IPersonRepository
+    public class PersonRepository : GenericRepository<Person>, IPersonRepository
     {
         private readonly ExampleContext _context;
 
-        public PersonRepository(ExampleContext context)
+        public PersonRepository(ExampleContext context):base(context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
-        public async Task<IEnumerable<Person>> FindAllAsync() => await Task.Run(() => _context.Person);
     }
 }
